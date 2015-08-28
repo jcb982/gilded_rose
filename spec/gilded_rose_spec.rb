@@ -25,7 +25,7 @@ describe "#update_quality" do
       expect(item.quality).to eq(0)
     end
 
-    it "except for Sulfaras, quality cannot exceed 50" do
+    it "except for Sulfuras, quality cannot exceed 50" do
       update_quality([item_to_be_corrected])
       expect(item_to_be_corrected.sell_in).to eq(3)
       expect(item_to_be_corrected.quality).to eq(50)
@@ -50,13 +50,13 @@ describe "#update_quality" do
 
   end
 
-  context 'with Sulfaras, Hand of Ragnaros' do
-    let(:sulfaras) { Item.new('Sulfaras, Hand of Ragnaros', 5, 80) }
+  context 'with Sulfuras, Hand of Ragnaros' do
+    let(:sulfuras) { Item.new('Sulfuras, Hand of Ragnaros', 5, 80) }
 
-    it "sulfaras quality is always 80; quality and sell_in never degrade" do
-      2.times { update_quality([sulfaras]) }
-      expect(sulfaras.sell_in).to eq(5)
-      expect(sulfaras.quality).to eq(80)
+    it "Sulfuras quality is always 80; quality and sell_in never degrade" do
+      2.times { update_quality([sulfuras]) }
+      expect(sulfuras.sell_in).to eq(5)
+      expect(sulfuras.quality).to eq(80)
     end
 
   end

@@ -3,7 +3,7 @@ def update_quality(items)
   items.each do |item|
     name = item.name
     case
-    when name == 'Sulfaras, Hand of Ragnaros' then next
+    when name == 'Sulfuras, Hand of Ragnaros' then next
     when name == 'Aged Brie' then update_aged_brie(item)
     when name.match(/Backstage passes/) then update_backstage_passes(item)
     when name.match(/Conjured/) then update_conjured_item(item)
