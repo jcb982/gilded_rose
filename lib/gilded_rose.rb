@@ -40,7 +40,9 @@ def update_attributes(item, sell_in_mod, quality_mod)
 end
 
 def fix_illegal_values(item)
-  item.quality = item.quality > 50 ? 50 : item.quality < 0 ? 0 : item.quality
+  if !(0..50).include? item.quality
+    item.quality = item.quality > 50 ? 50 : 0
+  end
 end
 
 ######### DO NOT CHANGE BELOW #########
